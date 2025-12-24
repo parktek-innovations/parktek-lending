@@ -197,7 +197,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - Inspired by modern parking management solutions
-- Design inspired by ParkSmart.in
 - Icons from Font Awesome
 - Images and media optimized for web performance
 
