@@ -834,40 +834,75 @@ body {
 
 /* Contact Page Styles */
 .contact-hero {
-    padding: 8rem 0 4rem;
+    padding: 10rem 0 5rem;
     background: var(--gradient-primary);
     color: var(--white);
     text-align: center;
 }
 
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-hero p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+}
+
 .contact-section {
     padding: 5rem 0;
+    background: var(--light-color);
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 45% 55%;
+    gap: 4rem;
+    align-items: start;
 }
 
 .contact-info {
-    background: var(--light-color);
-    padding: 2rem;
-    border-radius: 15px;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 120px;
+}
+
+.contact-info h2 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.contact-info > p {
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
 }
 
 .contact-item {
     display: flex;
     align-items: start;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--light-color);
+}
+
+.contact-item:last-of-type {
+    border-bottom: none;
     margin-bottom: 2rem;
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: var(--gradient-primary);
-    border-radius: 12px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -876,11 +911,29 @@ body {
     flex-shrink: 0;
 }
 
+.contact-details h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
 .contact-form {
     background: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-form h2 {
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
 }
 
 .form-group {
@@ -889,20 +942,23 @@ body {
 
 .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     color: var(--dark-color);
     font-weight: 600;
+    font-size: 0.95rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--light-color);
-    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-family: inherit;
+    font-size: 1rem;
     transition: var(--transition);
+    background: var(--white);
 }
 
 .form-group input:focus,
@@ -910,11 +966,17 @@ body {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 130px;
 }
 
 .checkbox-label {
@@ -922,15 +984,22 @@ body {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 .checkbox-label input[type="checkbox"] {
     width: auto;
+    cursor: pointer;
 }
 
 .form-group button {
     width: 100%;
     cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 .form-group button i {
@@ -938,14 +1007,38 @@ body {
 }
 
 .social-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
     border-top: 2px solid var(--light-color);
 }
 
 .social-section h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.social-section .social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-section .social-links a {
+    width: 45px;
+    height: 45px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-section .social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
 }
 
 /* Map Section */
@@ -989,7 +1082,16 @@ body {
 /* Why Choose Section */
 .why-choose-section {
     padding: 5rem 0;
-    background: var(--white);
+    background: var(--light-color);
+}
+
+.why-choose-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.why-choose-section .features-row {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Animations */
@@ -1032,6 +1134,19 @@ body {
     .innovation-card,
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        position: static;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-hero p {
+        font-size: 1.1rem;
     }
 
     .hero {
@@ -1108,6 +1223,28 @@ body {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .contact-hero {
+        padding: 8rem 0 3rem;
+    }
+    
+    .contact-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-hero p {
+        font-size: 1rem;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 2rem;
+    }
+    
+    .contact-item {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
     }
 
     .stats-grid {
