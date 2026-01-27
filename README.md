@@ -1,6 +1,6 @@
 # ParkTek - Smart Parking Solutions Website
 
-![ParkTek Logo](images/Gemini_Generated_Image_byx3z6byx3z6byx3.png)
+![ParkTek Logo](images/parkTekLogo.png)
 
 A modern, responsive landing page for ParkTek - a smart parking ecosystem company offering innovative parking management solutions for corporates, residential societies, and commercial establishments.
 
@@ -43,7 +43,7 @@ ParkTekWeb/
 ├── styles.css              # All styling and animations
 ├── script.js               # JavaScript functionality
 ├── images/                 # Images and media folder
-│   ├── Gemini_Generated_Image_byx3z6byx3z6byx3.png    # Logo
+│   ├── parkTekLogo.png    # Logo
 │   ├── Gemini_Generated_Image_cjxy4rcjxy4rcjxy.png    # Corporate solution
 │   ├── Gemini_Generated_Image_d4zfxad4zfxad4zf.png    # Society solution
 │   ├── Gemini_Generated_Image_ecznk6ecznk6eczn.png    # Mall solution
@@ -171,7 +171,7 @@ Edit the CSS variables in `styles.css`:
 
 ## 📧 Contact Information
 
-- **Email**: support@parktek.com
+- **Email**: support@parktek.in
 - **Phone**: +91 9876543210
 - **Address**: Your City, India
 

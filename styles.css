@@ -57,7 +57,7 @@ body {
 }
 
 .navbar.scrolled .logo img {
-    height: 80px;
+    height: 100px;
 }
 
 .nav-content {
@@ -65,7 +65,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    min-height: 100px;
+    min-height: 120px;
 }
 
 .logo {
@@ -76,7 +76,7 @@ body {
 }
 
 .logo img {
-    height: 100px;
+    height: 140px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
@@ -165,6 +165,7 @@ body {
     text-align: center;
     overflow: hidden;
     margin-bottom: 0;
+    margin-top: 120px;
 }
 
 .hero-video {
@@ -755,16 +756,19 @@ body {
 }
 
 .footer-logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     margin-bottom: 1rem;
+    background: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .footer-logo img {
-    height: 120px;
+    height: 80px;
     width: auto;
     object-fit: contain;
-    filter: brightness(1.2);
 }
 
 .footer-col p {
@@ -1153,6 +1157,7 @@ body {
         height: 65vh;
         min-height: 450px;
         max-height: 600px;
+        margin-top: 100px;
     }
 
     .hero-title {
@@ -1177,17 +1182,21 @@ body {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0.25rem 0;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 90px;
+        top: 60px;
         flex-direction: column;
         background: var(--white);
         width: 100%;
         text-align: center;
         transition: var(--transition);
         box-shadow: var(--shadow-md);
-        padding: 2rem 0;
+        padding: 1.5rem 0;
     }
 
     .nav-menu.active {
@@ -1199,21 +1208,26 @@ body {
     }
 
     .logo img {
-        height: 60px;
+        height: 50px;
     }
     
     .nav-content {
-        min-height: 70px;
+        min-height: 60px;
+    }
+    
+    .navbar.scrolled .logo img {
+        height: 45px;
     }
 
     .hero {
         height: 55vh;
         min-height: 400px;
         max-height: 500px;
+        margin-top: 60px;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
@@ -1226,7 +1240,7 @@ body {
     }
     
     .contact-hero {
-        padding: 8rem 0 3rem;
+        padding: 6rem 0 3rem;
     }
     
     .contact-hero h1 {
@@ -1257,7 +1271,7 @@ body {
     }
     
     .footer-logo img {
-        height: 80px;
+        height: 60px;
     }
     
     .features-grid {

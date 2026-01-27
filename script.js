@@ -107,29 +107,32 @@ animateElements.forEach(el => {
 });
 
 // Counter animation for stats
-const animateCounter = (element, target, duration = 2000) => {
+const animateCounter = (element, target, suffix = '', duration = 2000) => {
     let current = 0;
     const increment = target / (duration / 16);
-    const suffix = element.textContent.replace(/[0-9.,+]/g, '');
     
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            element.textContent = formatNumber(target) + suffix;
+            // Format final number
+            if (target >= 1000) {
+                element.textContent = target.toLocaleString() + suffix;
+            } else if (target % 1 !== 0) {
+                element.textContent = target.toFixed(1) + suffix;
+            } else {
+                element.textContent = target + suffix;
+            }
             clearInterval(timer);
         } else {
-            element.textContent = formatNumber(Math.floor(current)) + suffix;
+            if (target >= 1000) {
+                element.textContent = Math.floor(current).toLocaleString() + suffix;
+            } else if (target % 1 !== 0) {
+                element.textContent = current.toFixed(1) + suffix;
+            } else {
+                element.textContent = Math.floor(current) + suffix;
+            }
         }
     }, 16);
-};
-
-const formatNumber = (num) => {
-    if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-    } else if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
-    }
-    return num.toString();
 };
 
 // Trigger counter animation when stats section is visible
@@ -140,13 +143,18 @@ const statsObserver = new IntersectionObserver((entries) => {
             const statNumbers = entry.target.querySelectorAll('.stat-number');
             
             statNumbers.forEach(stat => {
-                const text = stat.textContent;
-                const hasPlus = text.includes('+');
-                const num = parseFloat(text.replace(/[^0-9.]/g, ''));
-                const multiplier = text.includes('M') ? 1000000 : text.includes('K') ? 1000 : 1;
-                const target = num * multiplier;
+                // Skip static values like "24/7"
+                if (stat.dataset.static === 'true') {
+                    return;
+                }
                 
-                animateCounter(stat, target);
+                // Use data attributes for clean animation
+                const value = parseFloat(stat.dataset.value);
+                const suffix = stat.dataset.suffix || '';
+                
+                if (!isNaN(value)) {
+                    animateCounter(stat, value, suffix);
+                }
             });
         }
     });
