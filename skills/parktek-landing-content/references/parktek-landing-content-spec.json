@@ -1,0 +1,539 @@
+{
+  "project": {
+    "name": "ParkTek Landing Page Content Spec",
+    "goal": "Rewrite and restructure parktek.in landing page content to feel premium and globally positioned, taking structural inspiration from smartparking.com/uk while staying faithful to ParkTek's current feature set and solutions.",
+    "stack_context": {
+      "target_stack": "React + Next.js (App Router) + Tailwind CSS + shadcn/ui",
+      "note": "This JSON contains content + information architecture only. No design guidance included."
+    },
+    "source_sites": {
+      "parktek_current": "https://parktek.in/",
+      "smartparking_inspiration": "https://www.smartparking.com/uk/"
+    }
+  },
+  "brand_voice": {
+    "positioning": "Operator-first parking operations platform that delivers outcomes (control, compliance, throughput, visibility) rather than a hardware feature flyer.",
+    "tone": [
+      "premium",
+      "global (non-local-marketplace tone)",
+      "outcome-led",
+      "clear and concise",
+      "decision-maker friendly"
+    ],
+    "language_rules": {
+      "lead_with": "outcomes first, then features",
+      "avoid": [
+        "excessive hype (e.g., best, world-class, cutting-edge)",
+        "generic competitor-style phrasing",
+        "overclaiming without defendable context"
+      ],
+      "preferred_vocabulary": [
+        "operations",
+        "access control",
+        "compliance",
+        "throughput",
+        "audit trail",
+        "exceptions",
+        "occupancy",
+        "peak periods",
+        "visibility",
+        "policy"
+      ]
+    }
+  },
+  "existing_features_inventory": {
+    "core_product_pillars_from_current_site": [
+      {
+        "id": "anpr_access",
+        "label": "ANPR Access",
+        "description": "AI-powered license plate recognition for access decisions"
+      },
+      {
+        "id": "list_tag",
+        "label": "List Tag",
+        "description": "Smart vehicle registration system"
+      },
+      {
+        "id": "valet_parking",
+        "label": "Valet Parking",
+        "description": "Valet management for parking operations"
+      },
+      {
+        "id": "fleet_sharing_ecosystem",
+        "label": "Fleet Sharing Ecosystem",
+        "description": "Fleet management and sharing ecosystem"
+      },
+      {
+        "id": "valet_assist",
+        "label": "Valet Assist",
+        "description": "Real-time tracking and seamless customer experience for valet operations"
+      }
+    ],
+    "system_module_controller": {
+      "id": "parktek_controller",
+      "label": "The Controller",
+      "description": "AI-enabled smart brain connecting and orchestrating system components and device data flows in real-time.",
+      "connected_components": [
+        {
+          "id": "anpr_camera",
+          "label": "ANPR Camera",
+          "description": "Vehicle recognition"
+        },
+        {
+          "id": "barrier_gate",
+          "label": "Barrier Gate",
+          "description": "Access control at entry/exit"
+        },
+        {
+          "id": "pos_device",
+          "label": "POS Device",
+          "description": "Payment and access enablement"
+        },
+        {
+          "id": "dashboard",
+          "label": "ParkTek Dashboard",
+          "description": "Operations management and monitoring"
+        }
+      ],
+      "also_supports": [
+        "Boom barriers (site hardware)",
+        "Mobile apps (user/operator experiences)"
+      ]
+    },
+    "solutions_by_segment_from_current_site": [
+      {
+        "id": "corporate_solutions",
+        "segment_label": "Corporate",
+        "capabilities": [
+          "Access Controller",
+          "Occupancy Monitoring",
+          "Web Dashboard",
+          "POS Device"
+        ]
+      },
+      {
+        "id": "society_solutions",
+        "segment_label": "Society",
+        "capabilities": [
+          "Enhanced Security",
+          "Resident Management",
+          "Mobile App Access",
+          "24/7 Monitoring"
+        ]
+      },
+      {
+        "id": "mall_commercial_solutions",
+        "segment_label": "Mall & Commercial",
+        "capabilities": [
+          "Smart Navigation",
+          "Digital Ticketing",
+          "Multiple Payment Options",
+          "Analytics Dashboard"
+        ]
+      }
+    ],
+    "capability_claims_from_current_site": {
+      "system_includes": [
+        "Boom Barriers",
+        "ANPR systems",
+        "POS devices",
+        "Web dashboard",
+        "Mobile apps"
+      ],
+      "operational_outcomes_claimed": [
+        "Reduced manual effort and labour cost",
+        "Improved traffic flow",
+        "Real-time monitoring",
+        "Automated billing and payment"
+      ],
+      "support_and_services": [
+        "Installation and commissioning",
+        "24/7 support",
+        "Preventive maintenance",
+        "Training",
+        "Updates and upgrades"
+      ]
+    },
+    "proof_metrics_from_current_site": [
+      {
+        "id": "locations",
+        "value": "1,000+",
+        "label": "Locations"
+      },
+      {
+        "id": "vehicles",
+        "value": "10M+",
+        "label": "Vehicles"
+      },
+      {
+        "id": "support",
+        "value": "24/7",
+        "label": "Support"
+      },
+      {
+        "id": "uptime",
+        "value": "99.9%",
+        "label": "Uptime"
+      }
+    ]
+  },
+  "content_ia": {
+    "page_type": "single_page_landing",
+    "navigation": {
+      "items": [
+        { "id": "solutions", "label": "Solutions" },
+        { "id": "system", "label": "System" },
+        { "id": "why_parktek", "label": "Why ParkTek" },
+        { "id": "case_studies", "label": "Case Studies" },
+        { "id": "resources", "label": "Resources" },
+        { "id": "contact", "label": "Contact" }
+      ],
+      "primary_cta": { "id": "cta_schedule_demo", "label": "Schedule a demo" },
+      "secondary_cta": { "id": "cta_talk_expert", "label": "Talk to an expert" },
+      "microcopy": "Hardware + software. Deployed end-to-end."
+    },
+    "sections": [
+      {
+        "id": "hero",
+        "type": "hero",
+        "headline": "Parking operations, under control.",
+        "subhead": "ParkTek is an integrated access-control and parking management system—built for high-throughput sites that need reliability, compliance, and real-time visibility across every entry and exit.",
+        "bullets": [
+          "Reduce congestion and manual intervention at gates",
+          "Prevent misuse with verified access and automated enforcement logic",
+          "See occupancy, usage trends, and exceptions in one dashboard"
+        ],
+        "ctas": [
+          { "id": "cta_schedule_demo", "label": "Schedule a demo" },
+          { "id": "cta_view_solutions", "label": "View solutions" }
+        ],
+        "trust_strip_placeholder": {
+          "enabled": true,
+          "text": "Trusted across multi-site operations",
+          "note": "Logos/brands optional; only include if real and approved."
+        }
+      },
+      {
+        "id": "proof_metrics",
+        "type": "metrics",
+        "headline": "Designed for continuous operations where downtime is not an option.",
+        "metrics": [
+          { "value": "1,000+", "label": "Locations" },
+          { "value": "10M+", "label": "Vehicles" },
+          { "value": "24/7", "label": "Support" },
+          { "value": "99.9%", "label": "Uptime" }
+        ],
+        "integrity_note": "If any metric cannot be defended publicly, replace with verifiable metrics (e.g., sites deployed, monthly vehicle events processed) or remove."
+      },
+      {
+        "id": "solutions",
+        "type": "solution_cards",
+        "headline": "Solutions for every parking environment.",
+        "intro": "Pick the model that matches your site complexity and traffic profile.",
+        "cards": [
+          {
+            "id": "solutions_enterprise_campus",
+            "label": "Enterprise & Campus Access",
+            "copy": "Streamline entry/exit, manage permits at scale, and keep operations predictable—without adding headcount.",
+            "bullets": [
+              "Access Controller for verified vehicle entry",
+              "Occupancy monitoring for live availability signals",
+              "Operations dashboard for audit trails and exceptions",
+              "POS support where paid access is required"
+            ],
+            "cta": { "id": "cta_explore_enterprise", "label": "Explore enterprise access" },
+            "mapped_from_current": [
+              "Corporate solutions: Access Controller, Occupancy Monitoring, Web Dashboard, POS Device"
+            ]
+          },
+          {
+            "id": "solutions_residential",
+            "label": "Residential Communities",
+            "copy": "A resident-first access system that reduces disputes, improves security, and keeps visitor flows smooth.",
+            "bullets": [
+              "Enhanced security with controlled entry",
+              "Resident management and vehicle registry",
+              "Mobile app access for residents and visitors",
+              "24/7 monitoring for exceptions and incidents"
+            ],
+            "cta": { "id": "cta_explore_residential", "label": "Explore residential parking" },
+            "mapped_from_current": [
+              "Society solutions: Enhanced Security, Resident Management, Mobile App Access, 24/7 Monitoring"
+            ]
+          },
+          {
+            "id": "solutions_retail_mixed_use",
+            "label": "Retail & Mixed-Use Destinations",
+            "copy": "Keep queues down, increase turnover, and give customers a smoother arrival and exit experience.",
+            "bullets": [
+              "Smart navigation and guidance",
+              "Digital ticketing and validation flows",
+              "Multiple payment options via POS integration",
+              "Analytics dashboard for usage trends"
+            ],
+            "cta": { "id": "cta_explore_retail", "label": "Explore retail parking" },
+            "mapped_from_current": [
+              "Mall & Commercial solutions: Smart Navigation, Digital Ticketing, Multiple Payment Options, Analytics Dashboard"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "why_parktek",
+        "type": "outcomes",
+        "headline": "A smarter way to manage parking.",
+        "intro": "ParkTek is built to deliver operator outcomes, not just hardware installation.",
+        "outcome_bullets": [
+          "Introduce flexible payment and access policies",
+          "Prevent misuse and unauthorised parking",
+          "Improve compliance without friction",
+          "Reduce congestion during peak periods",
+          "Improve safety with better-controlled entry points",
+          "Make decisions using reliable reporting and trend insights"
+        ],
+        "inspiration_note": "Outcome framing inspired by Smart Parking industry pages; keep outcomes accurate to ParkTek capabilities."
+      },
+      {
+        "id": "system",
+        "type": "system_overview",
+        "headline": "One system. Every component in sync.",
+        "subhead": "The Controller orchestrates devices and data flows so your site behaves predictably—even at peak load.",
+        "primary_block": {
+          "label": "The Controller",
+          "key_points": [
+            "AI-enabled smart brain of the system",
+            "Connects gates, cameras, POS, and dashboards into one operational layer"
+          ]
+        },
+        "component_tiles": [
+          { "label": "ANPR Camera", "description": "Vehicle recognition" },
+          { "label": "Barrier Gate", "description": "Access control" },
+          { "label": "POS Device", "description": "Payment and access" },
+          { "label": "ParkTek Dashboard", "description": "Operations management" }
+        ],
+        "secondary_note": "Also supports boom barriers and mobile app flows.",
+        "cta": { "id": "cta_request_walkthrough", "label": "Request a system walkthrough" }
+      },
+      {
+        "id": "capabilities",
+        "type": "feature_grid",
+        "headline": "Capabilities that scale with your site.",
+        "items": [
+          {
+            "id": "cap_anpr_access",
+            "label": "ANPR Access",
+            "description": "Automated plate recognition for entry/exit decisions",
+            "maps_to_existing": "ANPR Access"
+          },
+          {
+            "id": "cap_vehicle_registry",
+            "label": "Vehicle Registry",
+            "description": "Structured vehicle database for permits and identity",
+            "maps_to_existing": "List Tag"
+          },
+          {
+            "id": "cap_valet_operations",
+            "label": "Valet Operations",
+            "description": "Professional valet flow management",
+            "maps_to_existing": "Valet Parking"
+          },
+          {
+            "id": "cap_fleet_shared_parking",
+            "label": "Fleet & Shared Parking",
+            "description": "Manage fleet movements and shared access policies",
+            "maps_to_existing": "Fleet Sharing Ecosystem"
+          },
+          {
+            "id": "cap_occupancy_intelligence",
+            "label": "Occupancy Intelligence",
+            "description": "Live occupancy and monitoring signals",
+            "maps_to_existing": "Occupancy Monitoring"
+          },
+          {
+            "id": "cap_payments_pos",
+            "label": "Payments & POS",
+            "description": "Seamless payment processing and exit enablement",
+            "maps_to_existing": "POS Device"
+          },
+          {
+            "id": "cap_command_dashboard",
+            "label": "Command Dashboard",
+            "description": "Real-time monitoring, analytics, and audit trails",
+            "maps_to_existing": "Web Dashboard / ParkTek Dashboard"
+          },
+          {
+            "id": "cap_mobile_apps",
+            "label": "Mobile Apps",
+            "description": "User-friendly resident/operator experiences",
+            "maps_to_existing": "Mobile apps"
+          }
+        ]
+      },
+      {
+        "id": "how_it_works",
+        "type": "steps",
+        "headline": "Deploy without operational disruption.",
+        "steps": [
+          {
+            "step": 1,
+            "title": "Site assessment & integration plan",
+            "detail": "Map entry/exit points, traffic patterns, device integration requirements, and operating policies."
+          },
+          {
+            "step": 2,
+            "title": "Install & commissioning",
+            "detail": "Install hardware and configure system components; validate flows end-to-end."
+          },
+          {
+            "step": 3,
+            "title": "Go-live with monitoring + optimisation",
+            "detail": "Launch with operational monitoring and tune policies based on real-world usage."
+          }
+        ],
+        "support_model": {
+          "title": "Support and services",
+          "items": [
+            "Professional installation and commissioning",
+            "24/7 technical support",
+            "Preventive and periodic maintenance",
+            "Staff training and onboarding",
+            "Regular updates and upgrades"
+          ]
+        }
+      },
+      {
+        "id": "case_studies",
+        "type": "proof_cards",
+        "headline": "Results operators care about.",
+        "intro": "Use real deployments, pilots, or measurable improvements. Do not publish fabricated testimonials.",
+        "cards": [
+          {
+            "id": "cs_queue_reduction",
+            "title": "Reduced queue times at peak",
+            "metric_placeholder": true,
+            "notes": "Replace with real metric (e.g., average wait time reduced by X%)."
+          },
+          {
+            "id": "cs_disputes_reduction",
+            "title": "Fewer unauthorised entries and disputes",
+            "metric_placeholder": true,
+            "notes": "Replace with real metric (e.g., unauthorised entries reduced by X%)."
+          },
+          {
+            "id": "cs_reporting_audit",
+            "title": "Clear reporting for audits and billing",
+            "metric_placeholder": true,
+            "notes": "Replace with real metric (e.g., reconciliation time reduced by X%)."
+          }
+        ],
+        "cta_options": [
+          { "id": "cta_see_deployments", "label": "See deployments", "use_only_if_true": true },
+          { "id": "cta_talk_to_references", "label": "Talk to references", "use_only_if_true": true }
+        ]
+      },
+      {
+        "id": "faq",
+        "type": "faq",
+        "headline": "FAQ",
+        "items": [
+          {
+            "q": "What environments do you support?",
+            "a": "ParkTek supports boom barriers, ANPR systems, POS devices, a web dashboard, and mobile app flows—configured to match your site layout and operating model."
+          },
+          {
+            "q": "How does ParkTek reduce operational overhead?",
+            "a": "By automating entry/exit decisions, improving traffic flow, enabling real-time monitoring, and supporting automated billing and payments—reducing manual intervention and day-to-day friction."
+          },
+          {
+            "q": "Can ParkTek scale from small sites to multi-site operations?",
+            "a": "Yes. ParkTek is designed to scale from smaller locations to high-throughput, multi-site operations with configurable policies and centralized visibility."
+          },
+          {
+            "q": "What support model do you provide?",
+            "a": "Installation and commissioning, 24/7 support, preventive maintenance, training, and regular updates/upgrades."
+          }
+        ]
+      },
+      {
+        "id": "final_cta",
+        "type": "cta_block",
+        "headline": "Ready to bring parking operations under control?",
+        "subhead": "Book a demo and we’ll map ParkTek to your site layout, traffic patterns, and policy needs.",
+        "ctas": [
+          { "id": "cta_schedule_demo", "label": "Schedule a demo" },
+          { "id": "cta_contact_sales", "label": "Contact sales" }
+        ]
+      },
+      {
+        "id": "footer",
+        "type": "footer",
+        "columns": [
+          {
+            "title": "Solutions",
+            "links": [
+              { "id": "footer_enterprise", "label": "Enterprise & Campus Access", "href": "#solutions" },
+              { "id": "footer_residential", "label": "Residential Communities", "href": "#solutions" },
+              { "id": "footer_retail", "label": "Retail & Mixed-Use", "href": "#solutions" }
+            ]
+          },
+          {
+            "title": "System",
+            "links": [
+              { "id": "footer_system_overview", "label": "System overview", "href": "#system" },
+              { "id": "footer_capabilities", "label": "Capabilities", "href": "#capabilities" }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              { "id": "footer_about", "label": "About", "href": "/about" },
+              { "id": "footer_careers", "label": "Careers", "href": "/careers" }
+            ]
+          },
+          {
+            "title": "Contact",
+            "links": [
+              { "id": "footer_contact", "label": "Contact", "href": "#contact" }
+            ]
+          }
+        ],
+        "contact_section_placeholder": {
+          "enabled": true,
+          "fields": [
+            "Company email",
+            "Phone",
+            "Address"
+          ],
+          "note": "Use real and current contact info from ParkTek."
+        }
+      }
+    ]
+  },
+  "cta_registry": [
+    { "id": "cta_schedule_demo", "label": "Schedule a demo" },
+    { "id": "cta_talk_expert", "label": "Talk to an expert" },
+    { "id": "cta_view_solutions", "label": "View solutions" },
+    { "id": "cta_explore_enterprise", "label": "Explore enterprise access" },
+    { "id": "cta_explore_residential", "label": "Explore residential parking" },
+    { "id": "cta_explore_retail", "label": "Explore retail parking" },
+    { "id": "cta_request_walkthrough", "label": "Request a system walkthrough" },
+    { "id": "cta_see_deployments", "label": "See deployments" },
+    { "id": "cta_talk_to_references", "label": "Talk to references" },
+    { "id": "cta_contact_sales", "label": "Contact sales" }
+  ],
+  "implementation_notes_for_codex": {
+    "content_only": true,
+    "no_design_guidance_included": true,
+    "placeholders_to_resolve": [
+      "Any logos/clients in trust strip (only if real and approved)",
+      "Case study metrics (must be real, otherwise keep as pilot placeholders)",
+      "Footer About/Careers routes (create pages only if needed)",
+      "Contact details (use real ParkTek info)"
+    ],
+    "integrity_rules": [
+      "Do not fabricate testimonials or client logos.",
+      "Avoid publishing metrics that cannot be defended publicly.",
+      "Keep language outcome-led and globally neutral."
+    ]
+  }
+}

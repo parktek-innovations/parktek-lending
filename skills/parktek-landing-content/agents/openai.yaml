@@ -1,0 +1,4 @@
+version: 1
+display_name: ParkTek Landing Content + Design
+short_description: Reuse approved ParkTek copy, IA, and responsive design rules.
+default_prompt: Implement or revise the ParkTek lending page using stored content and design references for Next.js App Router with Tailwind and shadcn/ui.
