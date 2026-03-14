@@ -58,6 +58,56 @@
         .back-link:hover {
             text-decoration: underline;
         }
+        .policy-links {
+            margin: 0 0 24px 0;
+            padding: 12px 16px;
+            background: #eef3f9;
+            border-radius: 8px;
+            color: #2c3e50;
+        }
+        .policy-links a {
+            color: #003366;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .policy-links a:hover {
+            text-decoration: underline;
+        }
+        .delete-guide {
+            background: #f5f7fb;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .delete-guide ol {
+            margin: 12px 0 0 20px;
+        }
+        .delete-guide p {
+            margin-bottom: 10px;
+        }
+        .delete-gallery {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            margin-top: 16px;
+        }
+        .delete-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+        .delete-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .delete-card p {
+            margin: 10px 0 0;
+            font-size: 0.95em;
+            color: #4a5568;
+        }
     </style>
 </head>
 <body>
@@ -90,6 +140,7 @@
             <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
             
             <h1>Privacy Policy</h1>
+            <p class="policy-links"><strong>Quick link:</strong> <a href="#account-deletion">Account Deletion (In-App)</a></p>
 
             <h2>1. Introduction</h2>
             <p>ParkTek ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and protect information when you use the ParkTek application or services.</p>
@@ -162,16 +213,46 @@
             </ul>
             <p>Requests can be made by contacting ParkTek support.</p>
 
-            <h2>8. Cookies & Tracking</h2>
+            <h2 id="account-deletion">8. Account Deletion (In-App)</h2>
+            <p>ParkTek provides an in-app flow to permanently delete your account.</p>
+            <div class="delete-guide">
+                <p><strong>Steps:</strong></p>
+                <ol>
+                    <li>Log in with your mobile number and verify with the OTP.</li>
+                    <li>Go to <strong>Profile</strong>. You will see options to update or delete your account.</li>
+                    <li>Tap <strong>Delete Account</strong> and confirm to permanently delete your account.</li>
+                </ol>
+                <p><strong>Note:</strong> This action cannot be undone.</p>
+                <div class="delete-gallery">
+                    <div class="delete-card">
+                        <img src="images/account-delete-1.png" alt="Login screen with mobile number input">
+                        <p>Login with your mobile number</p>
+                    </div>
+                    <div class="delete-card">
+                        <img src="images/account-delete-2.png" alt="Edit profile screen with delete account option">
+                        <p>Go to Profile and click Delete Account</p>
+                    </div>
+                    <div class="delete-card">
+                        <img src="images/account-delete-3.png" alt="Delete account confirmation dialog">
+                        <p>Confirm account deletion</p>
+                    </div>
+                    <div class="delete-card">
+                        <img src="images/account-delete-4.png" alt="Account deleted success message">
+                        <p>Account deleted successfully</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>9. Cookies & Tracking</h2>
             <p>ParkTek may use cookies or similar technologies on its website to improve functionality and analytics. Cookie preferences can be managed through browser settings.</p>
 
-            <h2>9. Children's Privacy</h2>
+            <h2>10. Children's Privacy</h2>
             <p>ParkTek does not knowingly collect data from children under 13 years of age.</p>
 
-            <h2>10. Policy Updates</h2>
+            <h2>11. Policy Updates</h2>
             <p>This Privacy Policy may be updated periodically. Continued use of ParkTek after updates indicates acceptance of the revised policy.</p>
 
-            <h2>11. Contact Information</h2>
+            <h2>12. Contact Information</h2>
             <p>For privacy-related questions or requests, contact:</p>
             <p><strong>Email:</strong> support@parktek.in</p>
         </div>
