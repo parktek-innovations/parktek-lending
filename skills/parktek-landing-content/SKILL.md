@@ -1,24 +1,21 @@
 ---
 name: parktek-landing-content
-description: ParkTek lending-page content and design implementation reference for Next.js App Router + Tailwind CSS + shadcn/ui. Use when creating, revising, or mapping landing-page sections, CTA copy, IA, responsive layout (desktop/tablet/mobile), and visual styling for parktek.in.
+description: ParkTek landing-page content and design implementation reference for the Next.js App Router site in `parktek-lending`. Use when creating, revising, or mapping landing-page sections, CTA copy, IA, responsive layout, and landing-specific visual styling.
 ---
 
 # ParkTek Landing Content
 
-Use this skill to keep landing-page implementation aligned with approved ParkTek messaging, information architecture, and UI design constraints.
+Use `$parktek-platform` first for shared design tokens or platform-wide standards. Use this skill for landing-page content structure and Next.js implementation details.
 
-## Workflow
+## Core References
 
-1. Read `references/parktek-landing-content-spec.json` before writing landing-page copy.
-2. Read `references/parktek-design-guide.md` before writing React/Next.js UI code.
-3. Preserve section IDs, CTA IDs, and headline intent unless explicitly asked to change them.
-4. Lead with outcomes first, then capabilities.
-5. Keep language globally neutral and premium.
-6. Do not invent logos, testimonials, or unverifiable metrics.
+Read `references/parktek-landing-content-spec.json` before changing landing-page copy or IA.
+Read `references/parktek-design-guide.md` for landing-page visual direction and composition rules.
 
-## Implementation Notes
+## Working Rules
 
-- Treat this skill as content source of truth for the lending page rewrite.
-- If the user provides newer content/copy in future, update the JSON reference first, then implement code changes.
-- For UI implementation tasks, map content into Next.js App Router sections with Tailwind + shadcn/ui components.
-- Enforce monochrome + signal-blue palette rules and responsive behavior from `references/parktek-design-guide.md`.
+- Preserve section IDs, CTA IDs, and headline intent unless explicitly asked to change them.
+- Lead with outcomes first, then capabilities.
+- Keep language globally neutral and premium.
+- Do not invent logos, testimonials, or unverifiable metrics.
+- Treat `references/parktek-design-guide.md` as landing-specific implementation guidance, not the cross-platform design source of truth.
