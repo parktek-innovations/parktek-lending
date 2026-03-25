@@ -3,8 +3,12 @@ import { Header } from "@/components/site/header";
 
 export function PageShell({ children, eyebrow, lead, title }) {
   return (
-    <main className="mx-auto max-w-[1728px] bg-parktek-cream px-4 pb-4 pt-4 sm:px-6 min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:pt-0">
-      <div className="min-[1440px]:hidden">
+    <main className="mx-auto max-w-[1728px] bg-parktek-cream px-4 pb-4 pt-4 sm:px-6 md:px-6 md:pb-6 md:pt-6 min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:pt-0">
+      <div className="md:hidden">
+        <Header />
+      </div>
+
+      <div className="hidden md:block min-[1440px]:hidden">
         <Header compact />
       </div>
 
@@ -12,7 +16,7 @@ export function PageShell({ children, eyebrow, lead, title }) {
         <Header className="mx-auto w-full max-w-[1648px]" forceDesktop />
       </div>
 
-      <section className="mx-auto mt-6 max-w-[1237px] rounded-[40px] bg-white px-6 py-10 shadow-card md:px-10 md:py-12 min-[1440px]:mt-[72px] min-[1440px]:p-[48px]">
+      <section className="mx-auto mt-5 max-w-[1237px] rounded-[40px] bg-white px-6 py-10 shadow-card md:mt-6 md:px-10 md:py-12 min-[1440px]:mt-[72px] min-[1440px]:p-[48px]">
         {eyebrow ? (
           <p className="font-clash text-sm uppercase tracking-[0.16em] text-parktek-yellow">
             {eyebrow}
