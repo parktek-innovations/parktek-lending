@@ -25,7 +25,7 @@ export function FaqSection({ className = "" }) {
   return (
     <section className={`rounded-[40px] bg-white px-5 py-10 shadow-card md:p-10 ${className}`} id="faq">
       <div className="flex flex-col items-center gap-[14.925px]">
-        <span className="rounded-[24px] border border-parktek-yellow px-[12.75px] py-[4.75px] text-center text-base text-parktek-yellow">
+        <span className="rounded-[24px] border border-parktek-yellow px-[11.75px] py-[3.75px] text-center text-[16px] leading-[24px] text-parktek-yellow">
           Frequently Asked Questions
         </span>
         <div className="text-center leading-none">
@@ -49,18 +49,16 @@ export function FaqSection({ className = "" }) {
             <AccordionTrigger icon={<FaqIcon />}>
               {item.question}
             </AccordionTrigger>
-            <AccordionContent className="pb-8 pr-12 text-[18px] tracking-[0.02em] text-[#525252]">
+            <AccordionContent className="max-w-[942px] pb-8 pr-12 text-[#525252]">
               {Array.isArray(item.answer) ? (
-                <div className="space-y-1 leading-[27px]">
+                <div className="space-y-0">
                   <p>We provide comprehensive parking management systems including:</p>
-                  <ul className="list-disc pl-7">
-                    {item.answer.map((answer) => (
-                      <li key={answer}>{answer}</li>
-                    ))}
-                  </ul>
+                  {item.answer.map((answer) => (
+                    <p key={answer}>{answer}</p>
+                  ))}
                 </div>
               ) : (
-                <p className="leading-[27px]">{item.answer}</p>
+                <p>{item.answer}</p>
               )}
             </AccordionContent>
           </AccordionItem>

@@ -9,6 +9,10 @@ import { NAV_LINKS } from "@/lib/site-content";
 
 export function Header({ className, compact = false, forceDesktop = false }) {
   const [open, setOpen] = useState(false);
+  const desktopLinks = NAV_LINKS.slice(0, 4);
+  const desktopLinkClass = compact
+    ? "inline-flex justify-center font-clash text-[20px] font-normal tracking-widest text-white transition-opacity hover:opacity-70"
+    : "inline-flex justify-center font-clash text-[22px] font-normal leading-none tracking-[2.2px] text-white transition-opacity hover:opacity-70";
 
   useEffect(() => {
     const close = () => setOpen(false);
@@ -43,11 +47,17 @@ export function Header({ className, compact = false, forceDesktop = false }) {
           </div>
         </Link>
 
-        <div className={cn("items-center gap-10", forceDesktop ? "flex" : "hidden xl:flex")}>
-          <nav className="flex items-center gap-10 font-clash text-[22px] tracking-[2.2px]">
-            {NAV_LINKS.slice(0, 4).map((link) => (
+        <div
+          className={cn(
+            "items-center justify-start gap-10",
+            compact ? "self-auto" : "self-stretch",
+            forceDesktop ? "flex" : "hidden xl:flex"
+          )}
+        >
+          <nav className="flex items-start gap-10">
+            {desktopLinks.map((link) => (
               <Link
-                className="transition-opacity hover:opacity-70"
+                className={desktopLinkClass}
                 href={link.href}
                 key={link.href}
               >
@@ -56,10 +66,13 @@ export function Header({ className, compact = false, forceDesktop = false }) {
             ))}
           </nav>
 
-          <div className="h-14 w-px bg-white/20" />
+          <div
+            aria-hidden="true"
+            className="h-14 w-px shrink-0 bg-[#767676]"
+          />
 
           <Link
-            className="font-clash text-[22px] tracking-[2.2px] transition-opacity hover:opacity-70"
+            className={desktopLinkClass}
             href="/contact/"
           >
             Contact Us

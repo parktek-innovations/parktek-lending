@@ -4,8 +4,12 @@ import { Header } from "@/components/site/header";
 export function PageShell({ children, eyebrow, lead, title }) {
   return (
     <main className="mx-auto max-w-[1728px] bg-parktek-cream px-4 pb-4 pt-4 sm:px-6 min-[1440px]:px-0 min-[1440px]:pb-0 min-[1440px]:pt-0">
-      <div className="min-[1440px]:px-[40px] min-[1440px]:pt-[40px]">
-        <Header compact className="min-[1440px]:w-[1648px]" />
+      <div className="min-[1440px]:hidden">
+        <Header compact />
+      </div>
+
+      <div className="hidden min-[1440px]:block min-[1440px]:px-[40px] min-[1440px]:pt-[40px]">
+        <Header className="mx-auto w-full max-w-[1648px]" forceDesktop />
       </div>
 
       <section className="mx-auto mt-6 max-w-[1237px] rounded-[40px] bg-white px-6 py-10 shadow-card md:px-10 md:py-12 min-[1440px]:mt-[72px] min-[1440px]:p-[48px]">
@@ -26,7 +30,13 @@ export function PageShell({ children, eyebrow, lead, title }) {
         <div className="mt-10 min-[1440px]:mt-[56px]">{children}</div>
       </section>
 
-      <Footer className="mt-10 min-[1440px]:mt-[104px]" />
+      <div className="min-[1440px]:hidden">
+        <Footer className="mt-10" />
+      </div>
+
+      <div className="hidden min-[1440px]:block">
+        <Footer className="mt-[104px]" forceDesktop />
+      </div>
     </main>
   );
 }

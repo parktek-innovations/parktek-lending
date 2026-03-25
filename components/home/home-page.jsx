@@ -58,12 +58,12 @@ const paymentPoints = [
 
 function HeroCopy() {
   return (
-    <div className="w-[1016px] px-[50px]">
-      <p className="font-clash text-[17.877px] uppercase tracking-[1.7877px] text-parktek-ink">
+    <div className="flex h-[652px] w-[1016px] flex-col justify-between px-[50px]">
+      <p className="font-clash text-[17.877px] font-medium uppercase leading-[23.84px] tracking-[1.7877px] text-parktek-ink">
         ⬡ SMART PARKING ECOSYSTEM · UNIFIED ACCESS CONTROL
       </p>
 
-      <div className="mt-[40px] w-[916px] text-parktek-ink">
+      <div className="w-[916px] text-parktek-ink">
         <p className="font-clash text-[84px] font-medium leading-[89.384px]">
           Connecting &amp;
           <br />
@@ -74,25 +74,26 @@ function HeroCopy() {
         </p>
       </div>
 
-      <p className="mt-[40px] w-[948px] text-[26.815px] leading-[38px] text-parktek-muted">
+      <p className="w-[948px] text-[26.815px] leading-[38px] text-parktek-muted">
         A comprehensive smart parking ecosystem integrating AI-powered ANPR, smart registration,
         and professional fleet management into one seamless platform.
       </p>
 
-      <div className="mt-[40px] flex items-center gap-[20px]">
+      <div className="flex items-center gap-[20px]">
         {heroPills.map((pill) => (
           <div
             className="flex h-[54px] items-center gap-[10px] rounded-[14895.871px] bg-white px-[20px] py-[12px]"
             key={pill.label}
-            style={{ width: pill.width }}
           >
             <img alt="" className="size-6" src={pill.icon} />
-            <span className="text-[20.856px] leading-[29.795px] text-parktek-ink">{pill.label}</span>
+            <span className="whitespace-nowrap text-[20.856px] leading-[29.795px] text-parktek-ink">
+              {pill.label}
+            </span>
           </div>
         ))}
       </div>
 
-      <div className="mt-[40px] flex items-center gap-[40px]">
+      <div className="flex items-center gap-[40px]">
         <Button
           asChild
           className="h-[67.795px] rounded-[11.918px] px-[35px] text-[20.856px] font-normal"
@@ -116,14 +117,35 @@ function HeroCopy() {
   );
 }
 
+function ViaListTaggingIcon() {
+  return (
+    <div className="relative h-[91px] w-[88px]">
+      <img
+        alt=""
+        className="absolute bottom-0 left-[20px] h-[62px] w-[48.714px]"
+        src="/figma/via/list-base.svg"
+      />
+      <img
+        alt=""
+        className="absolute left-[55px] top-[9px] h-[20.557px] w-[20.557px]"
+        src="/figma/via/list-dot.svg"
+      />
+      <div className="absolute left-0 top-0 flex size-8 items-center justify-center rounded-full bg-parktek-yellow">
+        <img alt="" className="size-5" src="/figma/via/lock.svg" />
+      </div>
+    </div>
+  );
+}
+
 function ViaSection({ mobile = false }) {
   if (mobile) {
     return (
       <section className="space-y-10" id="solutions">
         <div className="text-center">
           <p className="font-clash text-[42px] font-medium leading-[1] text-parktek-ink">Via Parktek</p>
-          <p className="mx-auto mt-4 max-w-[14ch] text-[34px] font-semibold leading-[1.08] text-parktek-yellow">
-            Expand operational efficiency and secure your premises
+          <p className="mx-auto mt-4 text-[34px] font-semibold leading-[1.08] text-parktek-yellow">
+            <span className="block">Expand operational efficiency</span>
+            <span className="block">and secure your premises</span>
           </p>
         </div>
 
@@ -145,31 +167,50 @@ function ViaSection({ mobile = false }) {
 
   return (
     <section className="w-[1325px]" id="solutions">
-      <div className="mx-auto flex w-[882px] flex-col items-center text-center">
+      <div className="mx-auto flex flex-col items-center text-center">
         <p className="font-clash text-[60px] font-medium leading-[89.384px] text-parktek-ink">
           Via Parktek
         </p>
         <p className="text-[52px] font-semibold leading-[1.05] text-parktek-yellow">
-          Expand operational efficiency and secure your premises
+          <span className="block">Expand operational efficiency</span>
+          <span className="block">and secure your premises</span>
         </p>
       </div>
 
-      <div className="mt-[80px] flex items-center gap-[68px]">
-        {viaCards.map((card, index) => (
-          <div className="flex items-center gap-[68px]" key={card.title}>
-            <div
-              className="flex flex-col items-center gap-6 text-center"
-              style={{ width: card.width }}
-            >
-              <img alt="" className="h-[71px] w-auto" src={card.icon} />
-              <h3 className="font-clash text-[32px] leading-[1.2] text-black">{card.title}</h3>
-              <p className="text-[24px] leading-[1.25] text-[#767676]">{card.copy}</p>
-            </div>
-            {index < viaCards.length - 1 ? (
-              <img alt="" className="h-[256px] w-px shrink-0" src="/figma/via/divider.svg" />
-            ) : null}
-          </div>
-        ))}
+      <div className="mt-[92px] flex items-start justify-center">
+        <div className="flex w-[326px] flex-col items-center text-center">
+          <img alt="" className="h-[71px] w-[92px]" src="/figma/via/anpr.svg" />
+          <h3 className="mt-[28px] font-clash text-[32px] font-medium leading-[1.1] text-black">
+            {viaCards[0].title}
+          </h3>
+          <p className="mt-[30px] max-w-[320px] text-[24px] leading-[1.42] text-[#8b8b8b]">
+            {viaCards[0].copy}
+          </p>
+        </div>
+
+        <div className="mx-[68px] h-[295px] w-px bg-[#d9d9d9]" />
+
+        <div className="flex w-[394px] flex-col items-center text-center">
+          <ViaListTaggingIcon />
+          <h3 className="mt-[18px] font-clash text-[32px] font-medium leading-[1.1] text-black">
+            {viaCards[1].title}
+          </h3>
+          <p className="mt-[31px] max-w-[410px] text-[24px] leading-[1.42] text-[#8b8b8b]">
+            {viaCards[1].copy}
+          </p>
+        </div>
+
+        <div className="mx-[68px] h-[295px] w-px bg-[#d9d9d9]" />
+
+        <div className="flex w-[333px] flex-col items-center text-center">
+          <img alt="" className="h-[71px] w-[88px]" src="/figma/via/valet.svg" />
+          <h3 className="mt-[28px] font-clash text-[32px] font-medium leading-[1.1] text-black">
+            {viaCards[2].title}
+          </h3>
+          <p className="mt-[30px] max-w-[360px] text-[24px] leading-[1.42] text-[#8b8b8b]">
+            {viaCards[2].copy}
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -302,25 +343,25 @@ function JoinSection({ mobile = false }) {
 
   return (
     <section className="flex w-[1237px] items-center justify-center gap-[48px] rounded-[40px] bg-white p-[40px] shadow-card" id="about">
-      <div className="relative h-[479.64px] w-[642.108px]">
+      <div className="flex w-[642.108px] flex-col items-start">
         <p className="font-clash text-[48px] leading-[43.2px] text-parktek-yellow">Join us</p>
         <h2 className="mt-[17px] text-[32px] leading-[1.22] text-[#111]">
           Partner with leading infrastructure providers and join forces with ParkTek to redefine
           the parking experience!
         </h2>
-        <p className="mt-[78px] text-[24px] leading-[36px] text-[#111]">
+        <p className="mt-[44px] text-[24px] leading-[36px] text-[#111]">
           For various parking lot operation needs, from automated boom barriers and ANPR license
           plate recognition to FASTag and QR code payment integration, we deliver the most
           scalable and secure smart parking strategy.
         </p>
         <Button
           asChild
-          className="mt-[40px] h-[59px] rounded-[36px] border-[3.6px] border-parktek-yellow bg-transparent px-[27.6px] text-[19.2px] font-normal text-parktek-yellow hover:bg-parktek-yellow/10"
+          className="mt-[36px] h-[59px] self-start gap-[4.8px] rounded-[36px] border-[3.6px] border-parktek-yellow bg-transparent px-[27.6px] text-[19.2px] font-normal text-parktek-yellow hover:bg-parktek-yellow/10"
           variant="ghost"
         >
           <Link href="/contact/">
             Become a ParkTek Partner
-            <img alt="" className="ml-[4.8px] size-[19.2px]" src="/figma/join/arrow.svg" />
+            <img alt="" className="size-[19.2px]" src="/figma/join/arrow.svg" />
           </Link>
         </Button>
       </div>
@@ -337,11 +378,11 @@ function JoinSection({ mobile = false }) {
 
 function DesktopHome() {
   return (
-    <div className="hidden min-[1440px]:block bg-[#e6e6e6] px-6 pb-8 pt-6">
+    <div className="hidden min-[1440px]:block bg-parktek-cream px-6 pb-8">
       <main className="mx-auto max-w-[1776px]">
-        <section className="overflow-hidden rounded-[48px] bg-parktek-cream" id="home">
+        <section className="overflow-hidden rounded-[100px] bg-parktek-cream" id="home">
           <DesktopHeroStage
-            art={<RoadArt className="left-0 top-[118px] h-[2160px] w-[1728px]" />}
+            art={<RoadArt className="left-0 top-0 h-[2160px] w-[1728px]" />}
             copy={<HeroCopy />}
             header={<Header forceDesktop />}
             via={<ViaSection />}
@@ -396,7 +437,7 @@ function TabletHome() {
                 key={pill.label}
               >
                 <img alt="" className="size-5" src={pill.icon} />
-                <span className="text-[18px] text-parktek-ink">{pill.label}</span>
+                <span className="whitespace-nowrap text-[18px] text-parktek-ink">{pill.label}</span>
               </div>
             ))}
           </div>
@@ -460,7 +501,7 @@ function MobileHome() {
                 key={pill.label}
               >
                 <img alt="" className="size-5" src={pill.icon} />
-                <span className="text-[16px] text-parktek-ink">{pill.label}</span>
+                <span className="whitespace-nowrap text-[16px] text-parktek-ink">{pill.label}</span>
               </div>
             ))}
           </div>
