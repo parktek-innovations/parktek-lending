@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DesktopHeroStage } from "@/components/home/desktop-hero-stage";
 import { FaqSection } from "@/components/site/faq-section";
 import { Footer } from "@/components/site/footer";
+import { HashLink, HashScrollHandler } from "@/components/site/hash-link";
 import { Header } from "@/components/site/header";
 import { Button } from "@/components/ui/button";
 import { RoadArt } from "@/components/home/road-art";
@@ -99,10 +100,10 @@ function HeroCopy() {
           className="h-[67.795px] rounded-[11.918px] px-[35px] text-[20.856px] font-normal"
           size="lg"
         >
-          <Link href="#solutions">
+          <HashLink href="#solutions">
             Explore Ecosystem
             <span className="ml-[26px] inline-block text-[29.795px] leading-[29.795px]">→</span>
-          </Link>
+          </HashLink>
         </Button>
         <Button
           asChild
@@ -443,10 +444,10 @@ function TabletHome() {
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button asChild className="h-16 rounded-[18px] px-7 text-lg">
-              <Link href="#solutions">
+              <HashLink href="#solutions">
                 Explore Ecosystem
                 <span className="ml-3 text-xl">→</span>
-              </Link>
+              </HashLink>
             </Button>
             <Button asChild className="h-16 rounded-[18px] px-7 text-lg" variant="outline">
               <Link href="/contact/">Book a Demo</Link>
@@ -507,10 +508,10 @@ function MobileHome() {
           </div>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button asChild className="h-14 rounded-[16px] text-base">
-              <Link href="#solutions">
+              <HashLink href="#solutions">
                 Explore Ecosystem
                 <span className="ml-3 text-lg">→</span>
-              </Link>
+              </HashLink>
             </Button>
             <Button asChild className="h-14 rounded-[16px] text-base" variant="outline">
               <Link href="/contact/">Book a Demo</Link>
@@ -541,6 +542,7 @@ function MobileHome() {
 export function HomePage() {
   return (
     <>
+      <HashScrollHandler />
       <DesktopHome />
       <TabletHome />
       <MobileHome />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { HashLink } from "@/components/site/hash-link";
 import { CONTACT_DETAILS, LEGAL_LINKS } from "@/lib/site-content";
 
 const quickLinks = [
@@ -31,81 +32,89 @@ const socialLinks = [
 export function Footer({ className = "", forceDesktop = false }) {
   return (
     <footer className={className}>
-      <div className="bg-black p-6 text-white">
+      <div className={forceDesktop ? "bg-black p-6 text-white" : "bg-black p-4 text-white sm:p-6"}>
         <div
           className={
             forceDesktop
               ? "rounded-[36px] border border-white/20 px-[72px] py-[72px]"
-              : "rounded-[36px] border border-white/20 px-6 py-10 md:px-[73.2px] md:py-[73.2px]"
+              : "rounded-[28px] border border-white/20 px-5 py-8 sm:px-6 sm:py-10 md:rounded-[32px] md:px-10 md:py-12 xl:rounded-[36px] xl:px-[73.2px] xl:py-[73.2px]"
           }
         >
           <div
             className={
               forceDesktop
-                ? "flex items-start justify-between gap-12"
-                : "grid gap-12 xl:grid-cols-[281px_474px_1fr]"
+                ? "grid items-start gap-12 grid-cols-[minmax(180px,281px)_minmax(320px,474px)_minmax(260px,390px)]"
+                : "grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-14 min-[1440px]:grid-cols-[minmax(180px,281px)_minmax(320px,474px)_minmax(260px,390px)] min-[1440px]:gap-y-12"
             }
           >
-            <div className="min-w-[117.5px] space-y-[14.4px]">
-              <h3 className="font-clash text-[28px] font-medium leading-[28.8px] text-[#424547]">
+            <div className="min-w-0 w-full space-y-3 md:space-y-4">
+              <h3 className="font-clash text-2xl font-medium leading-none text-[#424547] md:text-[26px] xl:text-[28px] xl:leading-[28.8px]">
                 Quick Links
               </h3>
-              <div className="text-[19.2px] leading-[42px]">
+              <div className="text-base leading-8 md:text-lg md:leading-9 xl:text-[19.2px] xl:leading-[42px]">
                 {quickLinks.map((link) => (
-                  <Link
+                  <HashLink
                     className="block transition-opacity hover:opacity-70"
                     href={link.href}
                     key={link.label}
                   >
                     {link.label}
-                  </Link>
+                  </HashLink>
                 ))}
               </div>
             </div>
 
-            <div className="max-w-[474px] space-y-[14.4px]">
-              <h3 className="font-clash text-[28px] font-medium leading-[28.8px] text-[#424547]">
+            <div className="min-w-0 w-full max-w-[474px] space-y-3 md:space-y-4">
+              <h3 className="font-clash text-2xl font-medium leading-none text-[#424547] md:text-[26px] xl:text-[28px] xl:leading-[28.8px]">
                 About Parktek
               </h3>
-              <div className="space-y-[14.4px] text-[19.2px] leading-[28.8px]">
-                <Link
+              <div className="space-y-3 text-base leading-7 md:space-y-4 md:text-lg md:leading-8 xl:space-y-[14.4px] xl:text-[19.2px] xl:leading-[28.8px]">
+                <HashLink
                   className="block transition-opacity hover:opacity-70"
                   href={aboutLinks[0].href}
                 >
                   {aboutLinks[0].label}
-                </Link>
+                </HashLink>
                 <Link className="block transition-opacity hover:opacity-70" href={aboutLinks[1].href}>
                   {aboutLinks[1].label}
                 </Link>
               </div>
             </div>
 
-            <div className="max-w-[390px] leading-[37.8px]">
-              <h3 className="font-clash text-[28px] font-medium leading-[37.8px] text-[#424547]">
+            <div
+              className={
+                forceDesktop
+                  ? "min-w-0 w-full max-w-[390px]"
+                  : "min-w-0 w-full max-w-[390px] md:col-span-2 min-[1440px]:col-span-1"
+              }
+            >
+              <h3 className="font-clash text-2xl font-medium leading-none text-[#424547] md:text-[26px] xl:text-[28px] xl:leading-[37.8px]">
                 Contact Us
               </h3>
-              <p className="mt-0 text-[19.2px] leading-[37.8px]">
-                For any inquiries, reach out to us at:
-                <br />
-                <br />
-                {`Email: ${CONTACT_DETAILS.email}`}
-                <br />
-                {`Phone: ${CONTACT_DETAILS.phone}`}
-                <br />
-                {`Address: ${CONTACT_DETAILS.address}`}
-              </p>
+              <div className="mt-4 space-y-2 text-base leading-7 md:mt-5 md:text-lg md:leading-8 xl:text-[19.2px] xl:leading-[37.8px]">
+                <p>For any inquiries, reach out to us at:</p>
+                <p className="break-words">{`Email: ${CONTACT_DETAILS.email}`}</p>
+                <p>{`Phone: ${CONTACT_DETAILS.phone}`}</p>
+                <p className="break-words">{`Address: ${CONTACT_DETAILS.address}`}</p>
+              </div>
             </div>
           </div>
 
           <div
             className={
               forceDesktop
-                ? "mt-[72px] flex items-center justify-between gap-8"
-                : "mt-16 flex flex-col gap-8 xl:flex-row xl:items-center xl:justify-between"
+                ? "mt-[72px] flex flex-wrap items-center justify-between gap-8"
+                : "mt-12 flex flex-col gap-8 md:mt-14 md:gap-10 lg:flex-row lg:items-center lg:justify-between"
             }
           >
-            <div className={forceDesktop ? "flex items-center gap-6" : "flex flex-col gap-6 xl:flex-row xl:items-center"}>
-              <div className="relative h-14 w-[158px] overflow-hidden">
+            <div
+              className={
+                forceDesktop
+                  ? "flex items-center gap-6"
+                  : "flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between lg:justify-start lg:gap-6"
+              }
+            >
+              <div className={forceDesktop ? "relative h-14 w-[158px] overflow-hidden" : "relative h-11 w-[124px] overflow-hidden sm:h-12 sm:w-[136px] xl:h-14 xl:w-[158px]"}>
                 <img
                   alt="ParkTek"
                   className="absolute left-[-25.83%] top-[-82.97%] h-[281.32%] w-[149.13%] max-w-none"
@@ -117,13 +126,13 @@ export function Footer({ className = "", forceDesktop = false }) {
               <div className="flex items-center gap-3">
                 {socialLinks.map((link) => (
                   <a
-                    className="inline-flex size-[38.4px] items-center justify-center rounded-full bg-[#333]"
+                    className="inline-flex size-9 items-center justify-center rounded-full bg-[#333] sm:size-10"
                     href={link.href}
                     key={link.alt}
                     rel="noreferrer"
                     target="_blank"
                   >
-                    <img alt={link.alt} className="size-[19.2px]" src={link.icon} />
+                    <img alt={link.alt} className="size-[18px] sm:size-[19.2px]" src={link.icon} />
                   </a>
                 ))}
               </div>
@@ -132,15 +141,15 @@ export function Footer({ className = "", forceDesktop = false }) {
             <div
               className={
                 forceDesktop
-                  ? "flex items-center justify-end gap-6"
-                  : "flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-end"
+                  ? "flex flex-wrap items-center justify-end gap-6"
+                  : "flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between lg:justify-end lg:gap-6"
               }
             >
               <div
                 className={
                   forceDesktop
                     ? "flex gap-10 text-[19.2px] leading-[28.8px]"
-                    : "flex flex-wrap gap-6 text-[19.2px] xl:gap-10"
+                    : "flex flex-wrap gap-x-6 gap-y-3 text-base leading-7 md:text-lg md:leading-8 xl:gap-10 xl:text-[19.2px] xl:leading-[28.8px]"
                 }
               >
                 {LEGAL_LINKS.map((link) => (
@@ -153,7 +162,7 @@ export function Footer({ className = "", forceDesktop = false }) {
                 className={
                   forceDesktop
                     ? "whitespace-nowrap text-[19.2px] leading-[28.8px] text-[#999999]"
-                    : "text-[19.2px] text-[#999]"
+                    : "text-sm leading-6 text-[#999] md:text-base md:leading-7 lg:text-right"
                 }
               >
                 {"\u00A9 2025 ParkTek. All rights reserved."}
