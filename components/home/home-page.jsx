@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { DesktopHeroStage } from "@/components/home/desktop-hero-stage";
+import { PaymentSection } from "@/components/home/payment-section";
 import { FaqSection } from "@/components/site/faq-section";
 import { Footer } from "@/components/site/footer";
 import { HashLink, HashScrollHandler } from "@/components/site/hash-link";
@@ -48,13 +49,6 @@ const viaCards = [
       "Streamline professional valet services and fleet sharing ecosystems from a single, intuitive dashboard to optimize your on-site resources.",
     width: "333px"
   }
-];
-
-const paymentPoints = [
-  "High-accuracy ANPR entry",
-  "Seamless vehicle movement",
-  "Contactless digital payments",
-  "Contactless digital payments"
 ];
 
 function HeroCopy() {
@@ -211,96 +205,6 @@ function ViaSection({ mobile = false }) {
           <p className="mt-[30px] max-w-[360px] text-[24px] leading-[1.42] text-[#8b8b8b]">
             {viaCards[2].copy}
           </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PaymentSection({ mobile = false }) {
-  if (mobile) {
-    return (
-      <section className="overflow-hidden rounded-[32px] bg-white shadow-card" id="features">
-        <div className="px-6 py-8">
-          <h2 className="max-w-[12ch] font-clash text-[40px] leading-[1.05] text-parktek-yellow">
-            License plate recognition and automatic payment upon exit.
-          </h2>
-          <p className="mt-8 text-[21px] leading-[1.35] text-black">
-            ParkTek has successfully integrated with most parking equipment suppliers on the
-            market, allowing you to quickly achieve unmanned and cashless payment in a low-cost
-            way. This reduces payment congestion during peak hours and makes it convenient for car
-            owners to leave directly after picking up their vehicles.
-          </p>
-
-          <div className="mt-8 space-y-5">
-            {paymentPoints.map((point, index) => (
-              <div className="flex items-center gap-4" key={`${point}-${index}`}>
-                <div className="h-px w-5 bg-parktek-yellow" />
-                {index === 0 ? (
-                  <div className="flex h-[46.4px] flex-1 items-center justify-between rounded-[30px] bg-[#f7f7f7] px-[10px]">
-                    <span className="text-[18px] leading-[23px] text-black">{point}</span>
-                    <img alt="" className="size-[26.4px]" src="/figma/payment/check.svg" />
-                  </div>
-                ) : (
-                  <span className="text-[18px] leading-[23px] text-black">{point}</span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-[#121100] p-8">
-          <img
-            alt="Vehicle payment illustration"
-            className="mx-auto w-full max-w-[330px]"
-            src="/figma/payment/illustration.svg"
-          />
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section className="overflow-hidden rounded-[40px] bg-white shadow-card" id="features">
-      <div className="grid h-[743px] w-[1237.333px] grid-cols-[742px_495.333px]">
-        <div className="relative pl-[30px] pr-[84px] pt-[74px]">
-          <h2 className="w-[687px] font-clash text-[48px] font-medium leading-[1.22] text-parktek-yellow">
-            License plate recognition and automatic payment upon exit.
-          </h2>
-
-          <p className="mt-[55px] w-[622px] text-[24px] leading-[1.28] text-black">
-            ParkTek has successfully integrated with most parking equipment suppliers on the
-            market, allowing you to quickly achieve unmanned and cashless payment in a low-cost
-            way. This reduces payment congestion during peak hours and makes it convenient for car
-            owners to leave directly after picking up their vehicles.
-          </p>
-
-          <div className="mt-[62px] space-y-[17px]">
-            <div className="flex items-center gap-[13px]">
-              <img alt="" className="h-px w-5 shrink-0" src="/figma/payment/line-short.svg" />
-              <div className="flex h-[46.4px] w-[599.4px] items-center justify-between rounded-[30px] bg-[#f7f7f7] px-[10px]">
-                <span className="text-[19px] leading-[normal] text-black">
-                  High-accuracy ANPR entry
-                </span>
-                <img alt="" className="size-[26.4px]" src="/figma/payment/check.svg" />
-              </div>
-            </div>
-
-            {paymentPoints.slice(1).map((point, index) => (
-              <div className="flex items-center gap-[22px]" key={`${point}-${index}`}>
-                <img alt="" className="h-px w-5 shrink-0" src="/figma/payment/line-short.svg" />
-                <span className="text-[19px] leading-[normal] text-black">{point}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex h-full items-center justify-center bg-[#121100]">
-          <img
-            alt="Vehicle payment illustration"
-            className="h-[743px] w-[495.333px]"
-            src="/figma/payment/illustration.svg"
-          />
         </div>
       </div>
     </section>
