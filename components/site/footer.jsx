@@ -6,8 +6,7 @@ const quickLinks = [
   { label: "About Us", href: "/#about" },
   { label: "Features", href: "/#features" },
   { label: "Contact", href: "/contact/" },
-  { label: "Careers", href: "/contact/" },
-  { label: "Travel Scenarios with Parktek", href: "/#solutions" }
+  { label: "Careers", href: "/contact/" }
 ];
 
 const aboutLinks = [
